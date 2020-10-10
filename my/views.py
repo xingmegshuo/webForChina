@@ -42,14 +42,19 @@ def change_data(info):
     return code_dic.get(info).get("f"), code_dic.get(info).get('s')
 
 
+import re
+
+
 def judge_pc_or_mobile(ua):
     """
     判断访问来源是pc端还是手机端
     :param ua: 访问来源头信息中的User-Agent字段内容
     :return:
     """
+
     factor = ua
     is_mobile = False
+
     _long_matches = r'googlebot-mobile|android|avantgo|blackberry|blazer|elaine|hiptop|ip(hone|od)|kindle|midp|mmp' \
                     r'|mobile|o2|opera mini|palm( os)?|pda|plucker|pocket|psp|smartphone|symbian|treo|up\.(browser|link)' \
                     r'|vodafone|wap|windows ce; (iemobile|ppc)|xiino|maemo|fennec'
@@ -86,7 +91,7 @@ def judge_pc_or_mobile(ua):
 
 # 首页
 def index(request):
-    if judge_pc_or_mobile(request):
+    if judge_pc_or_mobile(request.headers['User-Agent']):
         return render(request, 'm/index.html')
     else:
         return render(request, 'pc/index.html')
