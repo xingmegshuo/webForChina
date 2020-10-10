@@ -91,9 +91,10 @@ def judge_pc_or_mobile(ua):
 
 # 首页
 def index(request):
-    if judge_pc_or_mobile(request.headers['User-Agent']):
-        return render(request, 'm/index.html')
-    else:
+    try:
+        if judge_pc_or_mobile(request.headers['User-Agent']):
+            return render(request, 'm/index.html')
+    except:
         return render(request, 'pc/index.html')
 
 
