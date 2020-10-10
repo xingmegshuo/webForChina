@@ -27,7 +27,7 @@ function browserRedirect(pc_or_mobile) {
 
     if (pc_or_mobile === 'pc') {
         if (bIsIpad || bIsIphoneOs || bIsMidp || bIsUc7 || bIsUc || bIsAndroid || bIsCE || bIsWM) {
-            window.location.href = window.location.origin + '/m';
+            // window.location.href = window.location.origin + '/m';
             console.log('手机站链接')
                 // alert('手机站链接')
 
