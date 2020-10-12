@@ -1,0 +1,143 @@
+<!doctype html>
+
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>中国管理科学研究院职业教育研究所西南中心</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta content="telephone=no" name="format-detection"/>
+    <meta content="black" name=" apple-mobile-web-app-status-bar-style"/>
+    <meta content="email=no" name="format-detection"/>
+    <meta http-equiv="Cache-Control" content="no-cache"/>
+    <meta http-equiv="Content-Language" content="zh-CN"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=8,9,10,11,12"/>
+    <meta name="keywords" content="职业教育研究所"/>
+    <meta name="description" content="职业教育 研究所 中管院"/>
+
+    <!--设置浏览器标签页图标-->
+    <link rel="Shortcut Icon" href="img/common-img/ShortcutIcon.ico"/>
+
+    <!--清除浏览器默认 CSS样式-->
+    <link type="text/css" rel="stylesheet" href="/static/css/reset.css"/>
+
+    <link rel="stylesheet" type="text/css" href="/static/css/common2.css">
+
+    <!--swiper-->
+    <link rel="stylesheet" href="/static/css/swiper.min.css">
+
+    <!--内容部分 CSS-->
+    <link type="text/css" rel="stylesheet" href="/static/css/m/style.css"/>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="http://cdn.bootcss.com/html5shiv/3.7.0/html5shiv.min.js"></script>
+    <script src="http://cdn.bootcss.com/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+<div class="app">
+
+
+    <script src="/static/js/pc_or_mobile.js"></script>
+    <script>
+        browserRedirect('mobile')
+    </script>
+    <div class="header">
+        <div class="inner clearfix">
+            <a href="/m" class="logo"><img src="/static/img/logo.jpg"/></a>
+            <div class="btn">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+        <div class="nav">
+            <div class="mask"></div>
+            <div class="list">
+                <ul class="clearfix">
+                    <li><a href="/">首页</a></li>
+
+                    <li><a href="/info/18/">机构介绍</a></li>
+
+
+                    <li><a href="/info/9/">通知公告</a></li>
+
+
+                    <li><a href="/info/16/">课题研究</a></li>
+
+                    <li><a href="/info/01/">学术资讯</a></li>
+
+
+                    <li><a href="/info/34/">教育培训</a></li>
+
+
+                    <li><a href="/info/83/">合作交流</a></li>
+
+                    <li><a href="/info/20/">风土文化</a></li>
+                    <li><a href="/info/77/">证书查询</a></li>
+
+
+                    <li><a href="https://appo9qlkfdx2407.pc.xiaoe-tech.com" target=_blank>在线学习</a></li>
+
+                    <li><a href="About.aspx?m=60">联系我们</a></li>
+
+
+                </ul>
+            </div>
+        </div>
+    </div>
+    {% block content %}{% endblock %}
+    <div class="footer">
+        <p>Copyright ©2020: xxxxxxxxx</p>
+        <p>地 址：xxxxxxxxxxx</p>
+        <p><a href="http://beian.miit.gov.cn/ " target="_blank ">京ICP备xxxxx号</a></p>
+
+    </div>
+
+</div>
+
+
+<!--  jQuery 文件  -->
+<script type="text/javascript" src="/static/js/jquery-1.12.3.min.js"></script>
+<!--轮播图-->
+<script src="/static/js/swiper.min.js"></script>
+<script>
+    var bannerSwiper = new Swiper('.banner .swiper-container', {
+        pagination: '.banner .swiper-pagination',
+        autoplay: 5000,
+        slidesPerView: 'auto',
+        mousewheelControl: true,
+        roundLengths: true,
+        autoHeight: true,
+        speed: 600
+    });
+    $(".banner .con .prev").click(function () {
+        bannerSwiper.slidePrev();
+    })
+    $(".banner .con .next").click(function () {
+        bannerSwiper.slideNext();
+    })
+    $(".hot .page .list a").click(function () {
+        var thisIndex = $(this).index();
+        $(this).addClass("active").siblings("a").removeClass("active");
+        $(".hot .content .list .item:eq(" + thisIndex + ")").show().siblings(".item").hide();
+    })
+
+    $(".news .news-header .inner a").click(function () {
+        var thisIndex = $(this).index();
+        $(this).addClass("active").siblings("a").removeClass("active");
+        $(this).parents(".news").find(".news-body .list:eq(" + thisIndex + ")").show().siblings(".list").hide();
+    })
+</script>
+<script src="/static/js/common.js" type="text/javascript" charset="utf-8"></script>
+</body>
+
+</html>

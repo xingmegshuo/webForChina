@@ -1,0 +1,58 @@
+{% extends 'm/base.html' %}
+{% block content %}
+    <div class="bread">
+        <div class="inner">
+            <a href="/">首页</a><span>&gt;</span><a href="javascript:;">{{ first_name }} </a>
+            {% if second_name %}
+                <span>&gt;</span><a href="javascript:;">{{ second_name }}</a>
+            {% endif %}
+        </div>
+    </div>
+
+    <div class="small-nav">
+        <div class="small-nav-header clearfix">
+            <img src="/static/img/down.jpg"/>
+            <span>{{ second_name }}</span>
+        </div>
+        <div class="small-nav-body">
+            {% for k,v in nav.items %}
+                <a href="/info/{{ k }}/">{{ v }}</a>
+            {% endfor %}
+
+        </div>
+    </div>
+
+    <div class="notice">
+        <div class="list">
+            <ul>
+
+                <li><a href="Show.aspx?n=270">全国中等职业教育满意度测评报告</a></li>
+
+                <li><a href="Show.aspx?n=267">坚持职业教育改革转型发展正确方向</a></li>
+
+                <li><a href="Show.aspx?n=259">用终身教育思想发展职业教育</a></li>
+
+                <li><a href="Show.aspx?n=97">创高水平高职要建好一流专业群</a></li>
+
+                <li><a href="Show.aspx?n=96">基于“职业能力递进”,改革高职专业课程</a></li>
+
+                <li><a href="Show.aspx?n=95">职教教育硕士如何变身中职优质师资</a></li>
+
+                <li><a href="Show.aspx?n=94">人民日报评论员：大力发现培养选拔优秀年轻干部——四论贯彻落实全国组织工作会议精神</a></li>
+
+                <li><a href="Show.aspx?n=93">传承班墨奚文化 培育工匠型人才</a></li>
+
+                <li><a href="Show.aspx?n=92">高职教育要差别化发展</a></li>
+
+                <li><a href="Show.aspx?n=91">强化劳动教育，更好地立德树人</a></li>
+
+                <li><a href="Show.aspx?n=90">大力弘扬爱国奋斗精神推动教育建功新时代</a></li>
+
+                <li><a href="Show.aspx?n=86">推动新时代干部教育培训事业高质量发展</a></li>
+
+            </ul>
+        </div>
+        <div id="PageContent" class="pages"></div>
+    </div>
+
+{% endblock %}
